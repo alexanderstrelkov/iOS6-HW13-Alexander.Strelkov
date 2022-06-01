@@ -13,6 +13,7 @@
 		1166095C28469AFD00117326 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1166095A28469AFD00117326 /* Main.storyboard */; };
 		1166095E28469AFF00117326 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1166095D28469AFF00117326 /* Assets.xcassets */; };
 		1166096128469AFF00117326 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1166095F28469AFF00117326 /* LaunchScreen.storyboard */; };
+		116609692846A34100117326 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116609682846A34100117326 /* SettingTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		1166095D28469AFF00117326 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1166096028469AFF00117326 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1166096228469AFF00117326 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		116609682846A34100117326 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				1166095D28469AFF00117326 /* Assets.xcassets */,
 				1166095F28469AFF00117326 /* LaunchScreen.storyboard */,
 				1166096228469AFF00117326 /* Info.plist */,
+				116609682846A34100117326 /* SettingTableViewCell.swift */,
 			);
 			path = "iOS6-HW13-Alexander.Strelkov";
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			files = (
 				1166095928469AFD00117326 /* ViewController.swift in Sources */,
 				1166095528469AFD00117326 /* AppDelegate.swift in Sources */,
+				116609692846A34100117326 /* SettingTableViewCell.swift in Sources */,
 				1166095728469AFD00117326 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

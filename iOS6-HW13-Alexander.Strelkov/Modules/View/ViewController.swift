@@ -70,7 +70,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }, isToggled: false)),
             .staticCell(model: SettingsOptions(title: "Wi-Fi", detail: "Не подключено", icon: UIImage(systemName: "wifi"), iconColor: .systemBlue) {
             }),
-            .staticCell(model: SettingsOptions(title: "Bluetooth", detail: nil, icon: UIImage(named: "bluetooth"), iconColor: .systemBlue) {
+            .staticCell(model: SettingsOptions(title: "Bluetooth", detail: "Вкл.", icon: UIImage(named: "bluetooth"), iconColor: .systemBlue) {
             }),
             .staticCell(model: SettingsOptions(title: "Сотовая связь", detail: nil, icon: UIImage(systemName: "antenna.radiowaves.left.and.right"), iconColor: .systemGreen) {
             }),

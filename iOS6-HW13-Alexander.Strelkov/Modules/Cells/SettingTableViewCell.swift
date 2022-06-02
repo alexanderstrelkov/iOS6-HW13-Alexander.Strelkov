@@ -32,10 +32,17 @@ class SettingTableViewCell: UITableViewCell {
         return label
     }()
     
+    private let detailLabel: UILabel = {
+        let detailLabel = UILabel()
+        detailLabel.textColor = .lightGray
+        return detailLabel
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(label)
         contentView.addSubview(iconContainer)
+        contentView.addSubview(detailLabel)
         iconContainer.addSubview(iconImageView)
         contentView.clipsToBounds = true
         accessoryType = .disclosureIndicator
@@ -59,18 +66,22 @@ class SettingTableViewCell: UITableViewCell {
             width: contentView.frame.size.width - 20 - iconContainer.frame.size.width,
             height: contentView.frame.size.height
         )
+        detailLabel.translatesAutoresizingMaskIntoConstraints = false
+        detailLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -8).isActive = true
+        detailLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
     }
     
-//    override func prepareForReuse() {
-//        super.prepareForReuse()
-//        iconImageView.image = nil
-//        label.text = nil
-//        iconContainer.backgroundColor = nil
-//    }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        iconImageView.image = nil
+        label.text = nil
+        iconContainer.backgroundColor = nil
+    }
     
     public func configure(with model: SettingsOptions) {
         label.text = model.title
         iconImageView.image = model.icon
         iconContainer.backgroundColor = model.iconColor
+        detailLabel.text = model.detail
     }
 }

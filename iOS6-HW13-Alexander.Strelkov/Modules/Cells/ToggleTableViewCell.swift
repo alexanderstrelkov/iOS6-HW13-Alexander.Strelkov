@@ -38,6 +38,7 @@ class ToggleTableViewCell: UITableViewCell {
         return toggle
         
     }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(label)
@@ -81,7 +82,7 @@ class ToggleTableViewCell: UITableViewCell {
         toggle.isOn = false
     }
     
-    public func configure(with model: SettingsSwitchOption) {
+    public func configureCustomCell(with model: SettingsSwitchOption) {
         label.text = model.title
         iconImageView.image = model.icon
         iconContainer.backgroundColor = model.iconColor

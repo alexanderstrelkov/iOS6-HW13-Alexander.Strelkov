@@ -8,7 +8,7 @@
 import UIKit
 
 class SettingTableViewCell: UITableViewCell {
-     
+    
     static let identifier = "SettingTableViewCell"
     
     private let iconContainer: UIView = {
@@ -38,34 +38,54 @@ class SettingTableViewCell: UITableViewCell {
         return detailLabel
     }()
     
+    private let notificationContainer: UIView = {
+        let view = UIView()
+        view.clipsToBounds = true
+        view.layer.cornerRadius = 8
+        view.layer.masksToBounds = true
+        return view
+    }()
+    
+    private let notificationImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.tintColor = .red
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(label)
         contentView.addSubview(iconContainer)
-        contentView.addSubview(detailLabel)
         iconContainer.addSubview(iconImageView)
+        contentView.addSubview(detailLabel)
+        contentView.addSubview(notificationContainer)
+        notificationContainer.addSubview(notificationImageView)
         contentView.clipsToBounds = true
         accessoryType = .disclosureIndicator
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError()
     }
-   
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         let size: CGFloat = contentView.frame.size.height - 12
         iconContainer.frame = CGRect(x: 15, y: 6, width: size, height: size)
         
+        notificationContainer.frame = CGRect(x: 320, y: 6, width: size, height: size)
+        
         let imageSize: CGFloat = size/1.5
         iconImageView.frame = CGRect(x: (size - imageSize)/2, y: (size - imageSize)/2, width: imageSize, height: imageSize)
-        
+        notificationImageView.frame = CGRect(x: (size - imageSize)/2, y: (size - imageSize)/2, width: imageSize, height: imageSize)
         label.frame = CGRect(
             x: 25 + iconContainer.frame.size.width,
             y: 0,
             width: contentView.frame.size.width - 20 - iconContainer.frame.size.width,
             height: contentView.frame.size.height
         )
+        
         detailLabel.translatesAutoresizingMaskIntoConstraints = false
         detailLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -8).isActive = true
         detailLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
@@ -78,10 +98,23 @@ class SettingTableViewCell: UITableViewCell {
         iconContainer.backgroundColor = nil
     }
     
-    public func configure(with model: SettingsOptions) {
+    public func configureCustomCell(with model: SettingsOptions) {
+        label.text = model.title
+        iconImageView.image = model.icon
+        iconContainer.backgroundColor = model.iconColor
+    }
+    
+    public func configureDetailLabelCell(with model: detailTextOptions) {
         label.text = model.title
         iconImageView.image = model.icon
         iconContainer.backgroundColor = model.iconColor
         detailLabel.text = model.detail
+    }
+    
+    public func configureNotificationCell(with model: notificationLabelOptions) {
+        label.text = model.title
+        iconImageView.image = model.icon
+        iconContainer.backgroundColor = model.iconColor
+        notificationImageView.image = model.notification
     }
 }

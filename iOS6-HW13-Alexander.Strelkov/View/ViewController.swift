@@ -16,8 +16,6 @@ struct Section {
 enum SettingsOptionsType {
     case staticCell(model: SettingsOptions)
     case switchCell(model: SettingsSwitchOption)
-    case staticCellWithDetails(model: detailTextOptions)
-    case staticCellWithLabel(model: notificationLabelOptions)
 }
 
 struct SettingsSwitchOption {
@@ -32,25 +30,10 @@ struct SettingsOptions {
     let title: String
     let icon: UIImage?
     let iconColor: UIColor
-    let handler: (() -> Void)
-}
-
-struct detailTextOptions {
-    let title: String
     let detail: String?
-    let icon: UIImage?
-    let iconColor: UIColor
-    let handler: (() -> Void)
-}
-
-struct notificationLabelOptions {
-    let title: String
-    let icon: UIImage?
-    let iconColor: UIColor
     let notification: UIImage?
     let handler: (() -> Void)
 }
-
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -87,37 +70,37 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         models.append(Section(options: [
             .switchCell(model: SettingsSwitchOption(title: "Авиарежим", icon: UIImage(systemName: "airplane"), iconColor: .systemOrange, handler: {
             }, isToggled: false)),
-            .staticCellWithDetails(model: detailTextOptions(title: "Wi-Fi", detail: "Не подключено", icon: UIImage(systemName: "wifi"), iconColor: .systemBlue) {
+            .staticCell(model: SettingsOptions(title: "Wi-Fi", icon: UIImage(systemName: "wifi"), iconColor: .systemBlue, detail: "Не подключено", notification: nil) {
             }),
-            .staticCellWithDetails(model: detailTextOptions(title: "Bluetooth", detail: "Вкл.", icon: UIImage(named: "bluetooth"), iconColor: .systemBlue) {
+            .staticCell(model: SettingsOptions(title: "Bluetooth", icon: UIImage(named: "bluetooth"), iconColor: .systemBlue, detail: "Вкл.", notification: nil) {
             }),
-            .staticCell(model: SettingsOptions(title: "Сотовая связь", icon: UIImage(systemName: "antenna.radiowaves.left.and.right"), iconColor: .systemGreen) {
+            .staticCell(model: SettingsOptions(title: "Сотовая связь", icon: UIImage(systemName: "antenna.radiowaves.left.and.right"), iconColor: .systemGreen, detail: nil, notification: nil) {
             }),
-            .staticCell(model: SettingsOptions(title: "Режим модема", icon: UIImage(systemName: "personalhotspot"), iconColor: .systemGreen) {
+            .staticCell(model: SettingsOptions(title: "Режим модема", icon: UIImage(systemName: "personalhotspot"), iconColor: .systemGreen, detail: nil, notification: nil) {
             }),
             .switchCell(model: SettingsSwitchOption(title: "VPN", icon: UIImage(systemName: "wifi.square.fill"), iconColor: .systemBlue, handler: {
             }, isToggled: false)),
         ]))
         models.append(Section(options: [
-            .staticCell(model: SettingsOptions(title: "Уведомления", icon: UIImage(systemName: "bell.badge.fill"), iconColor: .systemRed) {
+            .staticCell(model: SettingsOptions(title: "Уведомления", icon: UIImage(systemName: "bell.badge.fill"), iconColor: .systemRed, detail: nil, notification: nil) {
             }),
-            .staticCell(model: SettingsOptions(title: "Звуки, тактильные сигналы", icon: UIImage(systemName: "speaker.wave.3.fill"), iconColor: .systemRed) {
+            .staticCell(model: SettingsOptions(title: "Звуки, тактильные сигналы", icon: UIImage(systemName: "speaker.wave.3.fill"), iconColor: .systemRed, detail: nil, notification: nil) {
             }),
-            .staticCell(model: SettingsOptions(title: "Не беспокоить", icon: UIImage(systemName: "moon.fill"), iconColor: .systemIndigo) {
+            .staticCell(model: SettingsOptions(title: "Не беспокоить", icon: UIImage(systemName: "moon.fill"), iconColor: .systemIndigo, detail: nil, notification: nil) {
             }),
-            .staticCell(model: SettingsOptions(title: "Экранное время", icon: UIImage(systemName: "hourglass"), iconColor: .systemIndigo) {
+            .staticCell(model: SettingsOptions(title: "Экранное время", icon: UIImage(systemName: "hourglass"), iconColor: .systemIndigo, detail: nil, notification: nil) {
             })
         ]))
         models.append(Section(options: [
-            .staticCellWithLabel(model: notificationLabelOptions(title: "Основные", icon: UIImage(systemName: "gear"), iconColor: .systemGray, notification: UIImage(systemName: "1.circle.fill")) {
+            .staticCell(model: SettingsOptions(title: "Основные", icon: UIImage(systemName: "gear"), iconColor: .systemGray, detail: nil, notification: UIImage(systemName: "1.circle.fill")) {
             }),
-            .staticCell(model: SettingsOptions(title: "Пункт управления", icon: UIImage(systemName: "switch.2"), iconColor: .systemGray) {
+            .staticCell(model: SettingsOptions(title: "Пункт управления", icon: UIImage(systemName: "switch.2"), iconColor: .systemGray, detail: nil, notification: nil) {
             }),
-            .staticCell(model: SettingsOptions(title: "Экран и яркость", icon: UIImage(systemName: "textformat.size"), iconColor: .systemBlue) {
+            .staticCell(model: SettingsOptions(title: "Экран и яркость", icon: UIImage(systemName: "textformat.size"), iconColor: .systemBlue, detail: nil, notification: nil) {
             }),
-            .staticCell(model: SettingsOptions(title: "Экран \"Домой\"", icon: UIImage(systemName: "apps.iphone"), iconColor: .systemGreen) {
+            .staticCell(model: SettingsOptions(title: "Экран \"Домой\"", icon: UIImage(systemName: "apps.iphone"), iconColor: .systemGreen, detail: nil, notification: nil) {
             }),
-            .staticCell(model: SettingsOptions(title: "Универсальный доступ", icon: UIImage(systemName: "figure.wave.circle"), iconColor: .systemGreen) {
+            .staticCell(model: SettingsOptions(title: "Универсальный доступ", icon: UIImage(systemName: "figure.wave.circle"), iconColor: .systemGreen, detail: nil, notification: nil) {
             })
         ]))
     }
@@ -151,24 +134,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 }
             cell.configureCustomCell(with: model)
             return cell
-            
-        case .staticCellWithDetails(let model):
-            guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: SettingTableViewCell.identifier,
-                for: indexPath) as? SettingTableViewCell else {
-                    return UITableViewCell()
-                }
-            cell.configureDetailLabelCell(with: model)
-            return cell
-            
-        case .staticCellWithLabel(let model):
-            guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: SettingTableViewCell.identifier,
-                for: indexPath) as? SettingTableViewCell else {
-                    return UITableViewCell()
-                }
-            cell.configureNotificationCell(with: model)
-            return cell
         }
     }
     
@@ -180,12 +145,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             model.handler()
             print("Нажата ячейка \(model.title)")
         case .switchCell(let model):
-            model.handler()
-            print("Нажата ячейка \(model.title)")
-        case .staticCellWithDetails(let model):
-            model.handler()
-            print("Нажата ячейка \(model.title)")
-        case .staticCellWithLabel(let model):
             model.handler()
             print("Нажата ячейка \(model.title)")
         }

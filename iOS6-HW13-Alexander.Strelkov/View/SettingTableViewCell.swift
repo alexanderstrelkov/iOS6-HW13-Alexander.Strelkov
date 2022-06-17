@@ -102,19 +102,7 @@ class SettingTableViewCell: UITableViewCell {
         label.text = model.title
         iconImageView.image = model.icon
         iconContainer.backgroundColor = model.iconColor
-    }
-    
-    public func configureDetailLabelCell(with model: detailTextOptions) {
-        label.text = model.title
-        iconImageView.image = model.icon
-        iconContainer.backgroundColor = model.iconColor
         detailLabel.text = model.detail
-    }
-    
-    public func configureNotificationCell(with model: notificationLabelOptions) {
-        label.text = model.title
-        iconImageView.image = model.icon
-        iconContainer.backgroundColor = model.iconColor
         notificationImageView.image = model.notification
     }
 }

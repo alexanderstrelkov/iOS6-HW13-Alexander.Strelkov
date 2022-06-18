@@ -113,7 +113,6 @@
 				11143AF0285C77EE008B5299 /* View */,
 				11143AF1285C77F2008B5299 /* Controller */,
 				11143AED285C7727008B5299 /* Sources */,
-				11C288622847A09E00A66068 /* Modules */,
 				11C2885F28479D9C00A66068 /* Resources */,
 			);
 			path = "iOS6-HW13-Alexander.Strelkov";
@@ -137,21 +136,6 @@
 				1166096228469AFF00117326 /* Info.plist */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		11C288622847A09E00A66068 /* Modules */ = {
-			isa = PBXGroup;
-			children = (
-				11C288642847A0BC00A66068 /* Cells */,
-			);
-			path = Modules;
-			sourceTree = "<group>";
-		};
-		11C288642847A0BC00A66068 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

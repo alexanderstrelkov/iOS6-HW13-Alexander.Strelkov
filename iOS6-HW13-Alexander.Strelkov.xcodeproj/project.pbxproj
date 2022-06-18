@@ -7,23 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11143AF3285C87AB008B5299 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11143AF2285C87AB008B5299 /* Settings.swift */; };
+		11143AF5285C8B91008B5299 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11143AF4285C8B91008B5299 /* SettingsController.swift */; };
+		11143AF7285C900D008B5299 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11143AF6285C900D008B5299 /* SettingsModel.swift */; };
 		1166095528469AFD00117326 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1166095428469AFD00117326 /* AppDelegate.swift */; };
 		1166095728469AFD00117326 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1166095628469AFD00117326 /* SceneDelegate.swift */; };
-		1166095928469AFD00117326 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1166095828469AFD00117326 /* ViewController.swift */; };
+		1166095928469AFD00117326 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1166095828469AFD00117326 /* SettingsView.swift */; };
 		1166095C28469AFD00117326 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1166095A28469AFD00117326 /* Main.storyboard */; };
 		1166095E28469AFF00117326 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1166095D28469AFF00117326 /* Assets.xcassets */; };
 		1166096128469AFF00117326 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1166095F28469AFF00117326 /* LaunchScreen.storyboard */; };
+		116609692846A34100117326 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116609682846A34100117326 /* SettingTableViewCell.swift */; };
+		11C2885C2847779E00A66068 /* ToggleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C2885B2847779E00A66068 /* ToggleTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11143AF2285C87AB008B5299 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		11143AF4285C8B91008B5299 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		11143AF6285C900D008B5299 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		1166095128469AFD00117326 /* iOS6-HW13-Alexander.Strelkov.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS6-HW13-Alexander.Strelkov.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1166095428469AFD00117326 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1166095628469AFD00117326 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1166095828469AFD00117326 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1166095828469AFD00117326 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		1166095B28469AFD00117326 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1166095D28469AFF00117326 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1166096028469AFF00117326 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1166096228469AFF00117326 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		116609682846A34100117326 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		11C2885B2847779E00A66068 /* ToggleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +47,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11143AED285C7727008B5299 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				11C2885D28479D5E00A66068 /* App */,
+				11143AEE285C7742008B5299 /* Scenes */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		11143AEE285C7742008B5299 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		11143AEF285C77E9008B5299 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				11143AF6285C900D008B5299 /* SettingsModel.swift */,
+				11143AF2285C87AB008B5299 /* Settings.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		11143AF0285C77EE008B5299 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1166095828469AFD00117326 /* SettingsView.swift */,
+				11C2885B2847779E00A66068 /* ToggleTableViewCell.swift */,
+				116609682846A34100117326 /* SettingTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		11143AF1285C77F2008B5299 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				11143AF4285C8B91008B5299 /* SettingsController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		1166094828469AFD00117326 = {
 			isa = PBXGroup;
 			children = (
@@ -56,15 +109,33 @@
 		1166095328469AFD00117326 /* iOS6-HW13-Alexander.Strelkov */ = {
 			isa = PBXGroup;
 			children = (
-				1166095428469AFD00117326 /* AppDelegate.swift */,
-				1166095628469AFD00117326 /* SceneDelegate.swift */,
-				1166095828469AFD00117326 /* ViewController.swift */,
-				1166095A28469AFD00117326 /* Main.storyboard */,
-				1166095D28469AFF00117326 /* Assets.xcassets */,
-				1166095F28469AFF00117326 /* LaunchScreen.storyboard */,
-				1166096228469AFF00117326 /* Info.plist */,
+				11143AEF285C77E9008B5299 /* Model */,
+				11143AF0285C77EE008B5299 /* View */,
+				11143AF1285C77F2008B5299 /* Controller */,
+				11143AED285C7727008B5299 /* Sources */,
+				11C2885F28479D9C00A66068 /* Resources */,
 			);
 			path = "iOS6-HW13-Alexander.Strelkov";
+			sourceTree = "<group>";
+		};
+		11C2885D28479D5E00A66068 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				1166095428469AFD00117326 /* AppDelegate.swift */,
+				1166095628469AFD00117326 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		11C2885F28479D9C00A66068 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1166095D28469AFF00117326 /* Assets.xcassets */,
+				1166095F28469AFF00117326 /* LaunchScreen.storyboard */,
+				1166095A28469AFD00117326 /* Main.storyboard */,
+				1166096228469AFF00117326 /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +209,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1166095928469AFD00117326 /* ViewController.swift in Sources */,
+				11143AF7285C900D008B5299 /* SettingsModel.swift in Sources */,
+				11143AF3285C87AB008B5299 /* Settings.swift in Sources */,
+				1166095928469AFD00117326 /* SettingsView.swift in Sources */,
 				1166095528469AFD00117326 /* AppDelegate.swift in Sources */,
+				11143AF5285C8B91008B5299 /* SettingsController.swift in Sources */,
+				116609692846A34100117326 /* SettingTableViewCell.swift in Sources */,
 				1166095728469AFD00117326 /* SceneDelegate.swift in Sources */,
+				11C2885C2847779E00A66068 /* ToggleTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,7 +367,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QWP4K38XSA;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "iOS6-HW13-Alexander.Strelkov/Info.plist";
+				INFOPLIST_FILE = "iOS6-HW13-Alexander.Strelkov/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -319,7 +395,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QWP4K38XSA;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "iOS6-HW13-Alexander.Strelkov/Info.plist";
+				INFOPLIST_FILE = "iOS6-HW13-Alexander.Strelkov/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

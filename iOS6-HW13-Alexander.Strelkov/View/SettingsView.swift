@@ -9,7 +9,6 @@ import UIKit
 
 class SettingsView: UIView, UITableViewDelegate, UITableViewDataSource{
     
-    
     func configureView(with models: [Section]) {
         self.models = models
         tableView.reloadData()

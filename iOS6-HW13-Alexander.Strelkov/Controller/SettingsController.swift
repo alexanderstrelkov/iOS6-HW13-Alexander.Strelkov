@@ -27,6 +27,7 @@ final class SettingsController: UIViewController {
         configureView()
     }
 }
+
 private extension SettingsController {
     func configureView() {
         guard let models = model?.configCell() else { return }
